@@ -1,4 +1,4 @@
-# My Flask Application
+# My Job Board Application for Beetween
 
 Welcome to My Job Board Application! This is a simple Flask application that retrieves internship offers as a "Boucher"
 in Rennes and a 50km radius around the city.
