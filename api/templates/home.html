@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block title %} Home {% endblock %}
+{% block content %}
+    <br>
+    <h1>Vos offres d'alternance</h1>
+    <a class="btn btn-secondary" href="{{ url_for('views.refresh_offers') }}">Rafraîchir</a>
+    <ul class="list-group list-group-flush" id="job_offers">
+        {% for job_offer in job_offers %}
+            <li class="list-group-item">
+                <div class="text-primary"><strong>{{ job_offer.title }}</strong></div><br>
+                <div class="text-dark">Entreprise : {{ job_offer.company_name }}</div>
+                <div class="text-dark">Ville : {{ job_offer.city }}</div>
+                <div class="text-dark">Durée : {{ job_offer.duration }}</div>
+                <div class="text-dark">Type de Contrat : {{ job_offer.contract_type}}</div><br>
+                <div class="text-dark">Description : </div><br>
+                <div>{{ job_offer.description }}</div><br>
+                <a class="btn btn-primary" href="{{ job_offer.application_url }}">Postuler</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
